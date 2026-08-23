@@ -84,7 +84,8 @@ section.block{padding:72px 24px}
 
 .about{background:var(--paper);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
 .about .inner{display:grid;grid-template-columns:1fr 1.6fr;gap:44px;align-items:start}
-.about .portrait{aspect-ratio:4/5;background:var(--sand);border:1px solid var(--line);border-radius:8px;display:flex;align-items:center;justify-content:center;color:var(--muted);font-family:'Geist Mono',monospace;font-size:12px;letter-spacing:2px}
+.about .portrait{aspect-ratio:4/5;background:var(--sand);border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.about .portrait img{width:100%;height:100%;object-fit:cover;display:block}
 .about p{margin-top:16px;color:var(--muted)}
 .about p:first-of-type{margin-top:18px;color:var(--ink)}
 
@@ -184,7 +185,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
 
   <section class="about">
     <div class="wrap block inner">
-      <div class="portrait">portrætfoto her</div>
+      <div class="portrait"><img src="martin-klein.jpg" alt="Martin Klein, rådgiver hos Mentat" loading="lazy"></div>
       <div>
         <h2>Mennesket bag</h2>
         <p>Jeg hedder Martin Klein. Jeg har arbejdet med cybersikkerhed i 14 år, senest som teamleder for et rådgiverteam på ti mennesker, og jeg har stået på scenen til V2 Security og forklaret sikkerhed, så ikke-teknikere gad høre efter.</p>

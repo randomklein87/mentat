@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Den løbende aftale · Mentat</title>
+<meta name="description" content="Fase 2 af Husmentaten: et fast månedligt møde, et opdateret AI-register, og et vågent øje med AI-brug og lovgivning.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500;600&family=EB+Garamond:ital,wght@0,500;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --sand:#EFE7D6;
+  --paper:#F7F1E3;
+  --ink:#241F1A;
+  --muted:#6B5F4F;
+  --spice:#B4441F;
+  --sapho:#7A2E2A;
+  --line:#D8CBB2;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'EB Garamond',serif;background:var(--sand);color:var(--ink);font-size:19px;line-height:1.6;-webkit-font-smoothing:antialiased}
+h1,h2,.mono{font-family:'Geist Mono',monospace;font-weight:500;line-height:1.25;letter-spacing:-0.3px}
+.wrap{max-width:760px;margin:0 auto;padding:0 24px}
+a{color:var(--sapho)}
+
+.topbar{max-width:960px;margin:0 auto;padding:22px 24px;display:flex;align-items:center;justify-content:space-between}
+.brand{display:flex;align-items:center;gap:8px;text-decoration:none;color:var(--ink)}
+.brand span{font-family:'Geist Mono',monospace;font-size:clamp(24px,5vw,36px);font-weight:600}
+.brand span b{color:var(--spice);font-weight:600}
+.topbar a.cta-link{text-decoration:none;font-family:'Geist Mono',monospace;font-size:14px;color:var(--ink);border-bottom:2px solid var(--spice);padding-bottom:2px}
+
+.hero{padding:48px 24px 0}
+.eyebrow{font-family:'Geist Mono',monospace;font-size:13px;letter-spacing:2px;color:var(--spice);font-weight:500;margin-bottom:20px}
+.hero h1{font-size:clamp(28px,4.6vw,40px)}
+.hero p.lede{margin-top:22px;font-size:20px;max-width:60ch;color:var(--muted)}
+.hero .actions{margin-top:30px;display:flex;gap:16px;flex-wrap:wrap}
+.btn{display:inline-block;background:var(--ink);color:var(--sand);text-decoration:none;padding:13px 24px;border-radius:4px;font-family:'Geist Mono',monospace;font-size:14px}
+.btn:hover{background:var(--sapho)}
+.btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--ink)}
+.btn.ghost:hover{border-color:var(--sapho);color:var(--sapho);background:transparent}
+
+.content{padding:52px 24px}
+.content h2{font-size:24px;margin-bottom:8px}
+.content .sub{font-family:'Geist Mono',monospace;font-size:12px;letter-spacing:1.5px;color:var(--spice);text-transform:uppercase;margin-bottom:18px}
+.content p{margin-top:14px;max-width:68ch}
+.content p.muted{color:var(--muted)}
+.content ul{margin-top:14px;padding-left:22px;max-width:68ch}
+.content li{margin-top:10px}
+
+.statement{background:var(--sapho);color:var(--sand)}
+.statement .wrap{padding:52px 24px;max-width:640px}
+.statement p{font-size:clamp(20px,2.8vw,24px);line-height:1.5;font-weight:400}
+.statement p b{color:#F0C9A8;font-weight:500}
+
+.contact{padding:60px 24px 32px}
+.contact h2{font-size:22px}
+.contact p{margin-top:14px;color:var(--muted)}
+.contact .mail{display:inline-block;margin-top:22px;font-family:'Geist Mono',monospace;font-size:19px;color:var(--ink);text-decoration:none;border-bottom:3px solid var(--spice);padding-bottom:3px}
+.back{display:block;margin-top:20px;font-family:'Geist Mono',monospace;font-size:14px;color:var(--muted);text-decoration:none}
+.back:hover{color:var(--sapho)}
+
+footer{padding:36px 0 44px;border-top:1px solid var(--line);margin-top:8px}
+footer .wrap{max-width:760px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-family:'Geist Mono',monospace;font-size:12px;color:var(--muted)}
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <a class="brand" href="index.html"><span>mentat<b>.</b></span></a>
+  <a class="cta-link" href="index.html#kontakt">Kontakt</a>
+</header>
+
+<main>
+  <section class="hero wrap">
+    <p class="eyebrow">fase 2 af husmentaten</p>
+    <h1>Den løbende aftale</h1>
+    <p class="lede">Et fast møde hver måned, et AI-register der holdes opdateret, og et vågent øje med hvad der ændrer sig, både i jeres AI-brug og i lovgivningen.</p>
+    <div class="actions">
+      <a class="btn" href="index.html#kontakt">Book en snak</a>
+      <a class="btn ghost" href="opstartsmaaneden.html">Se fase 1</a>
+    </div>
+  </section>
+
+  <section class="content wrap">
+    <h2>Hvem det er til</h2>
+    <p>Kunder der har gennemført Opstartsmåneden, og vil have overblikket holdt ved lige uden selv at skulle huske på det.</p>
+
+    <h2>Hvad der er inkluderet</h2>
+    <ul>
+      <li><b>Et fast møde</b> hver måned (30–45 min): hvad er ændret siden sidst, nye risici, beslutninger der venter.</li>
+      <li><b>Et opdateret AI-register</b>, baseret på det I selv observerer mellem møderne.</li>
+      <li><b>Løbende vedligehold</b> af jeres AI Act-klassificering, i takt med at flere krav træder i kraft frem mod 2027.</li>
+    </ul>
+    <p class="muted">Ingen ubegrænset ad hoc-adgang i basisprisen — det ligger under Konsulentbistand, hvis I får brug for det. Det holder aftalen let og prisen lav.</p>
+
+    <h2>Prisen og bindingen</h2>
+    <p>Fast månedlig pris. Vi anbefaler minimum 3 måneders binding — en enkelt måned giver ikke tid til at vise værdi, og det beskytter begge parter mod at booke ét møde og forsvinde igen.</p>
+
+    <h2>Har I brug for mere?</h2>
+    <p class="muted">Skal AI-systemer klassificeres og dokumenteres for alvor, hører det til <a href="index.html#husmentaten">AI Act-projektet</a> — solgt separat, fordi omfanget varierer for meget til én fast pris.</p>
+  </section>
+
+  <section class="statement">
+    <div class="wrap">
+      <p>AI-landskabet skifter hver måned. <b>Det er præcis derfor, aftalen er løbende og ikke en engangsrapport.</b></p>
+    </div>
+  </section>
+
+  <section class="contact wrap" id="kontakt">
+    <h2>Klar til at komme i gang?</h2>
+    <p>En halv times ærlig samtale om, hvor I står.</p>
+    <a class="mail" href="mailto:martin@mentat.dk">martin@mentat.dk</a>
+    <a class="back" href="index.html">← Tilbage til forsiden</a>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>Mentat · Klar tænkning. Sikre rammer.</span>
+    <span>CVR: på vej · Sjælland, Danmark</span>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Opstartsmåneden · Mentat</title>
+<meta name="description" content="Fase 1 af Husmentaten: vi kortlægger jeres faktiske AI-brug og sætter det rette overvågningsværktøj i drift.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500;600&family=EB+Garamond:ital,wght@0,500;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --sand:#EFE7D6;
+  --paper:#F7F1E3;
+  --ink:#241F1A;
+  --muted:#6B5F4F;
+  --spice:#B4441F;
+  --sapho:#7A2E2A;
+  --line:#D8CBB2;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'EB Garamond',serif;background:var(--sand);color:var(--ink);font-size:19px;line-height:1.6;-webkit-font-smoothing:antialiased}
+h1,h2,.mono{font-family:'Geist Mono',monospace;font-weight:500;line-height:1.25;letter-spacing:-0.3px}
+.wrap{max-width:760px;margin:0 auto;padding:0 24px}
+a{color:var(--sapho)}
+
+.topbar{max-width:960px;margin:0 auto;padding:22px 24px;display:flex;align-items:center;justify-content:space-between}
+.brand{display:flex;align-items:center;gap:8px;text-decoration:none;color:var(--ink)}
+.brand span{font-family:'Geist Mono',monospace;font-size:clamp(24px,5vw,36px);font-weight:600}
+.brand span b{color:var(--spice);font-weight:600}
+.topbar a.cta-link{text-decoration:none;font-family:'Geist Mono',monospace;font-size:14px;color:var(--ink);border-bottom:2px solid var(--spice);padding-bottom:2px}
+
+.hero{padding:48px 24px 0}
+.eyebrow{font-family:'Geist Mono',monospace;font-size:13px;letter-spacing:2px;color:var(--spice);font-weight:500;margin-bottom:20px}
+.hero h1{font-size:clamp(28px,4.6vw,40px)}
+.hero p.lede{margin-top:22px;font-size:20px;max-width:60ch;color:var(--muted)}
+.hero .actions{margin-top:30px;display:flex;gap:16px;flex-wrap:wrap}
+.btn{display:inline-block;background:var(--ink);color:var(--sand);text-decoration:none;padding:13px 24px;border-radius:4px;font-family:'Geist Mono',monospace;font-size:14px}
+.btn:hover{background:var(--sapho)}
+.btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--ink)}
+.btn.ghost:hover{border-color:var(--sapho);color:var(--sapho);background:transparent}
+
+.content{padding:52px 24px}
+.content h2{font-size:24px;margin-bottom:8px}
+.content .sub{font-family:'Geist Mono',monospace;font-size:12px;letter-spacing:1.5px;color:var(--spice);text-transform:uppercase;margin-bottom:18px}
+.content p{margin-top:14px;max-width:68ch}
+.content p.muted{color:var(--muted)}
+.content ul{margin-top:14px;padding-left:22px;max-width:68ch}
+.content li{margin-top:10px}
+
+.statement{background:var(--sapho);color:var(--sand)}
+.statement .wrap{padding:52px 24px;max-width:640px}
+.statement p{font-size:clamp(20px,2.8vw,24px);line-height:1.5;font-weight:400}
+.statement p b{color:#F0C9A8;font-weight:500}
+
+.contact{padding:60px 24px 32px}
+.contact h2{font-size:22px}
+.contact p{margin-top:14px;color:var(--muted)}
+.contact .mail{display:inline-block;margin-top:22px;font-family:'Geist Mono',monospace;font-size:19px;color:var(--ink);text-decoration:none;border-bottom:3px solid var(--spice);padding-bottom:3px}
+.back{display:block;margin-top:20px;font-family:'Geist Mono',monospace;font-size:14px;color:var(--muted);text-decoration:none}
+.back:hover{color:var(--sapho)}
+
+footer{padding:36px 0 44px;border-top:1px solid var(--line);margin-top:8px}
+footer .wrap{max-width:760px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-family:'Geist Mono',monospace;font-size:12px;color:var(--muted)}
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <a class="brand" href="index.html"><span>mentat<b>.</b></span></a>
+  <a class="cta-link" href="index.html#kontakt">Kontakt</a>
+</header>
+
+<main>
+  <section class="hero wrap">
+    <p class="eyebrow">fase 1 af husmentaten</p>
+    <h1>Opstartsmåneden</h1>
+    <p class="lede">Vi kortlægger jeres faktiske AI-brug og sætter det rette overvågningsværktøj i drift, suppleret med korte samtaler med nøglemedarbejdere. I får et AI-register og en status på, hvor I står i forhold til AI-forordningen.</p>
+    <div class="actions">
+      <a class="btn" href="index.html#kontakt">Book en snak</a>
+      <a class="btn ghost" href="loebende-aftale.html">Se fase 2</a>
+    </div>
+  </section>
+
+  <section class="content wrap">
+    <h2>Hvem det er til</h2>
+    <p>Virksomheder der ved, medarbejderne bruger AI, men ikke ved præcis hvilke værktøjer, med hvilke data, eller hvad det betyder for risikobilledet. Typisk 50–500 ansatte.</p>
+    <p class="muted">Opstartsmåneden er obligatorisk for alle nye kunder — den er fundamentet, den løbende aftale bygger på.</p>
+
+    <h2>Sådan foregår det</h2>
+    <ul>
+      <li><b>Opstartsmøde.</b> Et møde med IT-ansvarlig og en ledelsesrepræsentant. Vi afklarer adgang og forventninger, og vurderer om det rette værktøj til jer er jeres eget it-miljø eller en dedikeret overvågningsløsning.</li>
+      <li><b>Kortlægning.</b> Det valgte værktøj sættes i drift, suppleret med korte samtaler med 3–4 nøglemedarbejdere — teknikken viser hvad, mennesker forklarer hvorfor.</li>
+      <li><b>Register og status.</b> Fundene bliver til et AI-register og en baseline-status ift. AI-forordningen.</li>
+      <li><b>Første møde.</b> Gennemgang af fundene og en prioriteret plan, som den løbende aftale tager over fra.</li>
+    </ul>
+    <p class="muted">Tempoet afhænger af, hvor hurtigt vi får adgang og svar fra jer undervejs, ikke af en fast kalender.</p>
+
+    <h2>Det I får</h2>
+    <p>Et AI-register: hvilke værktøjer, hvilke data, hvem har adgang. En baseline-vurdering op imod AI-forordningen. Og en klar overgang til den løbende aftale, hvor registeret holdes ved lige.</p>
+
+    <h2>Prisen</h2>
+    <p>Fast pris, ingen efterregning. Viser opstartsmødet at opgaven er væsentligt større end forventet, siger vi det før vi går i gang, ikke på fakturaen.</p>
+  </section>
+
+  <section class="statement">
+    <div class="wrap">
+      <p>Opstartsmåneden lægger fundamentet. <b>Den løbende aftale er det, der holder det ved lige.</b></p>
+    </div>
+  </section>
+
+  <section class="contact wrap" id="kontakt">
+    <h2>Klar til at komme i gang?</h2>
+    <p>En halv times ærlig samtale om, hvor I står.</p>
+    <a class="mail" href="mailto:martin@mentat.dk">martin@mentat.dk</a>
+    <a class="back" href="index.html">← Tilbage til forsiden</a>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>Mentat · Klar tænkning. Sikre rammer.</span>
+    <span>CVR: på vej · Sjælland, Danmark</span>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Den løbende aftale · Mentat</title>
-<meta name="description" content="Fase 2 af Husrådgiveren: et fast månedligt møde, et opdateret AI-register, og et vågent øje med AI-brug og lovgivning.">
+<meta name="description" content="Fase 2 af Husrådgiveren: overvågning af jeres AI-brug mellem møderne, i tre niveauer efter hvor tæt det skal være.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500;600&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
@@ -84,6 +84,21 @@ a{color:var(--sapho)}
 .deliverable .mark{width:8px;height:8px;border-radius:50%;background:var(--spice);margin-top:9px;flex-shrink:0}
 .deliverable p{margin:0;max-width:60ch}
 
+.tiers{margin-top:16px;display:grid;gap:16px}
+.tier{border-radius:8px;padding:26px 28px;border:1px solid var(--line)}
+.tier.core{background:var(--ink);border-color:var(--ink)}
+.tier.soon{background:var(--paper);border-style:dashed;opacity:0.85}
+.tier-head{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap}
+.tier-name{font-size:19px;font-weight:600}
+.tier.core .tier-name{color:var(--paper)}
+.tier.soon .tier-name{color:var(--ink)}
+.tier-price{font-family:'Geist Mono',monospace;font-size:14px;color:var(--spice)}
+.tier.core .tier-price{color:var(--amber)}
+.tier-badge{font-family:'Geist Mono',monospace;font-size:10.5px;letter-spacing:1px;text-transform:uppercase;color:var(--muted);border:1px solid var(--line);border-radius:20px;padding:3px 10px}
+.tier p.tier-desc{margin-top:10px;font-size:15.5px;max-width:60ch}
+.tier.core p.tier-desc{color:#CFC4AE}
+.tier.soon p.tier-desc{color:var(--muted)}
+
 .statement{background:var(--sapho);color:var(--sand)}
 .statement .wrap{padding:52px 24px;max-width:640px}
 .statement p{font-size:clamp(20px,2.8vw,24px);line-height:1.5;font-weight:400}
@@ -146,8 +161,8 @@ footer .wrap{max-width:760px;display:flex;justify-content:space-between;gap:16px
       <div class="cycle-line"></div>
       <div class="cycle-node">
         <div class="cycle-num">2</div>
-        <h3>Register opdateres</h3>
-        <p>Baseret på det I selv observerer mellem møderne — nye værktøjer, nye brugere.</p>
+        <h3>Registeret opdateres</h3>
+        <p>Overvågningsværktøjet fanger nye værktøjer og ændret brug automatisk, suppleret med det I selv observerer.</p>
       </div>
       <div class="cycle-line"></div>
       <div class="cycle-node">
@@ -160,15 +175,42 @@ footer .wrap{max-width:760px;display:flex;justify-content:space-between;gap:16px
 
     <h2>Det I får</h2>
     <div class="deliverables">
-      <div class="deliverable"><span class="mark"></span><p><b>Et fast månedligt møde</b>, sat i kalenderen på forhånd.</p></div>
+      <div class="deliverable"><span class="mark"></span><p><b>Et overvågningsværktøj der arbejder mellem møderne</b>, ikke kun ved dem.</p></div>
       <div class="deliverable"><span class="mark"></span><p><b>Et AI-register</b>, der reelt afspejler hvad der foregår lige nu, opdateret løbende.</p></div>
       <div class="deliverable"><span class="mark"></span><p><b>Løbende overblik over AI-forordningen</b>, mens flere krav træder i kraft frem mod 2027.</p></div>
       <div class="deliverable"><span class="mark"></span><p><b>Den samme rådgiver hver gang</b>, som allerede kender jeres opsætning.</p></div>
     </div>
     <p class="muted">Ingen ubegrænset ad hoc-adgang i basisprisen — det ligger under Konsulentbistand, hvis I får akut brug for det. Det holder aftalen let og prisen lav.</p>
 
-    <h2>Prisen og bindingen</h2>
-    <p>Fast månedlig pris. Vi anbefaler minimum 3 måneders binding — en enkelt måned giver ikke tid til at vise værdi, og det beskytter begge parter mod at booke ét møde og forsvinde igen.</p>
+    <h2>Tre niveauer</h2>
+    <p class="muted">Efter hvor tæt overvågningen skal være. Vi anbefaler minimum 3 måneders binding, uanset niveau — en enkelt måned giver ikke tid til at vise værdi.</p>
+
+    <div class="tiers">
+      <div class="tier core">
+        <div class="tier-head">
+          <span class="tier-name">Core</span>
+          <span class="tier-price">Fast pris/md</span>
+        </div>
+        <p class="tier-desc">Overvågning af jeres AI-brug, et fast månedligt møde, og et AI-register der holdes opdateret. Ingen ubegrænset ad hoc-adgang i basisprisen — det ligger under Konsulentbistand, hvis I får akut brug for det.</p>
+      </div>
+
+      <div class="tier soon">
+        <div class="tier-head">
+          <span class="tier-name">Plus</span>
+          <span class="tier-badge">På vej</span>
+        </div>
+        <p class="tier-desc">Tættere overvågning, kvartalsvis ledelsesrapport, og hurtigere svartid på spørgsmål mellem møderne.</p>
+      </div>
+
+      <div class="tier soon">
+        <div class="tier-head">
+          <span class="tier-name">Managed</span>
+          <span class="tier-badge">På vej</span>
+        </div>
+        <p class="tier-desc">Det dybeste niveau. Overvågning i realtid, og AI Act-vedligehold inkluderet i prisen i stedet for solgt separat.</p>
+      </div>
+    </div>
+    <p class="muted">Plus og Managed er under udvikling og formes af feedback fra de første kunder på Core, ikke gæt fra skrivebordet.</p>
 
     <h2>Har I brug for mere?</h2>
     <p class="muted">Skal AI-systemer klassificeres og dokumenteres for alvor, hører det til <a href="index.html#ai-act">AI Act-projektet</a> — solgt separat, fordi omfanget varierer for meget til én fast pris.</p>

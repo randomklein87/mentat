@@ -7,7 +7,7 @@
 <meta name="description" content="Fase 1 af Husrådgiveren: vi kortlægger jeres faktiske AI-brug og sætter det rette overvågningsværktøj i drift.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500;600&family=EB+Garamond:ital,wght@0,500;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500;600&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
 <style>
 :root{
   --sand:#EFE7D6;
@@ -49,9 +49,16 @@ a{color:var(--sapho)}
 .phase-node.active .dot{background:var(--spice);border-color:var(--spice)}
 .phase-node:hover{color:var(--sapho)}
 .phase-line{flex:1;height:1px;background:var(--line);margin:0 14px;min-width:24px}
+@media (max-width:600px){
+  .phase-track{flex-direction:column;align-items:flex-start;gap:12px}
+  .phase-line{display:none}
+}
+
 
 .content{padding:52px 24px}
-.content h2{font-size:24px;margin-bottom:8px}
+.content h2{font-size:24px;margin-top:48px;margin-bottom:8px}
+.content h2:first-child{margin-top:0}
+.hook+h2{margin-top:40px}
 .content .sub{font-family:'Geist Mono',monospace;font-size:12px;letter-spacing:1.5px;color:var(--spice);text-transform:uppercase;margin-bottom:18px}
 .content p{margin-top:14px;max-width:68ch}
 .content p.muted{color:var(--muted)}
@@ -119,14 +126,14 @@ footer .wrap{max-width:760px;display:flex;justify-content:space-between;gap:16px
   </section>
 
   <nav class="phase-track" aria-label="Faseoversigt">
-    <a href="opstartsmaaneden.html" class="phase-node active"><span class="dot"></span>Fase 1 · Opstartsmåneden</a>
+    <a href="opstartsmaaneden.html" class="phase-node active" aria-current="page"><span class="dot"></span>Fase 1 · Opstartsmåneden</a>
     <span class="phase-line"></span>
     <a href="loebende-aftale.html" class="phase-node"><span class="dot"></span>Fase 2 · Den løbende aftale</a>
   </nav>
 
   <section class="content wrap">
     <div class="hook">
-      <p><span class="stat">73%</span> af danske SMV'er er allerede i gang med AI. <span class="stat">40%</span> af dem har ingen politik for, hvordan det bruges. Det er sjældent fordi nogen er ligeglade — det er fordi ingen har haft tid til at spørge.</p>
+      <p><span class="stat">73%</span> af de adspurgte SMV'er er allerede i gang med AI. Samtidig mangler <span class="stat">40%</span> en politik for, hvordan det bruges. Det er sjældent fordi nogen er ligeglade — det er fordi ingen har haft tid til at spørge.</p>
     </div>
 
     <h2>Hvem det er til</h2>
@@ -182,13 +189,13 @@ footer .wrap{max-width:760px;display:flex;justify-content:space-between;gap:16px
 
   <section class="statement">
     <div class="wrap">
-      <p>Opstartsmåneden lægger fundamentet. <b>Fase 2 er det, der holder det ved lige.</b></p>
+      <p>Det tager én måned at gå fra at gætte til at vide, hvor I står.</p>
     </div>
   </section>
 
   <section class="contact wrap" id="kontakt">
     <h2>Klar til at komme i gang?</h2>
-    <p>En halv times ærlig samtale om, hvor I står.</p>
+    <p>En uforpligtende snak om, hvor I står lige nu.</p>
     <a class="mail" href="mailto:martin@mentat.dk">martin@mentat.dk</a>
     <a class="back" href="index.html">← Tilbage til forsiden</a>
   </section>

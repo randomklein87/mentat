@@ -7,7 +7,7 @@
 <meta name="description" content="Fase 2 af Husrådgiveren: et fast månedligt møde, et opdateret AI-register, og et vågent øje med AI-brug og lovgivning.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500;600&family=EB+Garamond:ital,wght@0,500;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500;600&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
 <style>
 :root{
   --sand:#EFE7D6;
@@ -49,9 +49,16 @@ a{color:var(--sapho)}
 .phase-node.active .dot{background:var(--spice);border-color:var(--spice)}
 .phase-node:hover{color:var(--sapho)}
 .phase-line{flex:1;height:1px;background:var(--line);margin:0 14px;min-width:24px}
+@media (max-width:600px){
+  .phase-track{flex-direction:column;align-items:flex-start;gap:12px}
+  .phase-line{display:none}
+}
+
 
 .content{padding:52px 24px}
-.content h2{font-size:24px;margin-bottom:8px}
+.content h2{font-size:24px;margin-top:48px;margin-bottom:8px}
+.content h2:first-child{margin-top:0}
+.hook+h2{margin-top:40px}
 .content p{margin-top:14px;max-width:68ch}
 .content p.muted{color:var(--muted)}
 
@@ -118,7 +125,7 @@ footer .wrap{max-width:760px;display:flex;justify-content:space-between;gap:16px
   <nav class="phase-track" aria-label="Faseoversigt">
     <a href="opstartsmaaneden.html" class="phase-node"><span class="dot"></span>Fase 1 · Opstartsmåneden</a>
     <span class="phase-line"></span>
-    <a href="loebende-aftale.html" class="phase-node active"><span class="dot"></span>Fase 2 · Den løbende aftale</a>
+    <a href="loebende-aftale.html" class="phase-node active" aria-current="page"><span class="dot"></span>Fase 2 · Den løbende aftale</a>
   </nav>
 
   <section class="content wrap">
@@ -164,7 +171,7 @@ footer .wrap{max-width:760px;display:flex;justify-content:space-between;gap:16px
     <p>Fast månedlig pris. Vi anbefaler minimum 3 måneders binding — en enkelt måned giver ikke tid til at vise værdi, og det beskytter begge parter mod at booke ét møde og forsvinde igen.</p>
 
     <h2>Har I brug for mere?</h2>
-    <p class="muted">Skal AI-systemer klassificeres og dokumenteres for alvor, hører det til <a href="index.html#husraadgiveren">AI Act-projektet</a> — solgt separat, fordi omfanget varierer for meget til én fast pris.</p>
+    <p class="muted">Skal AI-systemer klassificeres og dokumenteres for alvor, hører det til <a href="index.html#ai-act">AI Act-projektet</a> — solgt separat, fordi omfanget varierer for meget til én fast pris.</p>
 
     <div class="next">
       <p>Den løbende aftale forudsætter, at fundamentet allerede er lagt. Har I ikke gennemført Opstartsmåneden endnu, er det der, det hele starter.</p>
@@ -174,13 +181,13 @@ footer .wrap{max-width:760px;display:flex;justify-content:space-between;gap:16px
 
   <section class="statement">
     <div class="wrap">
-      <p>Fase 1 lægger fundamentet. <b>Det her er det, der holder det ved lige.</b></p>
+      <p>Overblik, der ikke vedligeholdes, forsvinder igen. <b>Det er hele pointen med denne aftale.</b></p>
     </div>
   </section>
 
   <section class="contact wrap" id="kontakt">
     <h2>Klar til at komme i gang?</h2>
-    <p>En halv times ærlig samtale om, hvor I står.</p>
+    <p>Ring eller skriv, så finder vi ud af, om det giver mening.</p>
     <a class="mail" href="mailto:martin@mentat.dk">martin@mentat.dk</a>
     <a class="back" href="index.html">← Tilbage til forsiden</a>
   </section>

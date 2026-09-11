@@ -7,7 +7,7 @@
 <meta name="description" content="Fast månedlig rådgivning der giver jer overblik over AI-brug og holder jer på ret kurs med AI-forordningen.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500;600&family=EB+Garamond:ital,wght@0,500;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500;600&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
 <style>
 :root{
   --sand:#EFE7D6;
@@ -112,8 +112,8 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
   .about .portrait{max-width:280px}
 }
 
-.stickynav{position:fixed;top:0;left:0;right:0;background:var(--paper);border-bottom:1px solid var(--line);z-index:100;transform:translateY(-100%);transition:transform .25s ease;box-shadow:0 2px 12px rgba(36,31,26,0.08)}
-.stickynav.visible{transform:translateY(0)}
+.stickynav{position:fixed;top:0;left:0;right:0;background:var(--paper);border-bottom:1px solid var(--line);z-index:100;transform:translateY(-100%);transition:transform .25s ease;box-shadow:0 2px 12px rgba(36,31,26,0.08);visibility:hidden;pointer-events:none}
+.stickynav.visible{transform:translateY(0);visibility:visible;pointer-events:auto}
 .stickynav .inner{max-width:960px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
 .stickynav .brand{display:flex;align-items:center;gap:8px;text-decoration:none;color:var(--ink);flex-shrink:0}
 .stickynav .brand span{font-family:'Geist Mono',monospace;font-size:20px;font-weight:600}
@@ -142,7 +142,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
 <div class="stickynav" id="stickynav">
   <div class="inner">
     <a class="brand" href="#top"><span>mentat<b>.</b></span></a>
-    <button class="stickynav-toggle" id="stickynav-toggle" aria-label="Åbn menu" aria-expanded="false">Menu</button>
+    <button class="stickynav-toggle" id="stickynav-toggle" aria-label="Åbn menu" aria-expanded="false" aria-controls="stickynav-menu">Menu</button>
     <nav id="stickynav-menu">
       <a href="#top">Forside</a>
       <a href="#husraadgiveren">Husrådgiveren</a>
@@ -180,12 +180,12 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
       <div class="grid">
         <div class="stat">
           <span class="num">73%</span>
-          <span class="label">af SMV'er er i gang med AI</span>
+          <span class="label">af de adspurgte integrerer allerede AI</span>
           <span class="src">ESET SMB Cyber Readiness Index 2026</span>
         </div>
         <div class="stat">
           <span class="num">40%</span>
-          <span class="label">af dem har ingen politik for det</span>
+          <span class="label">mangler en politik for AI-brug</span>
           <span class="src">ESET SMB Cyber Readiness Index 2026</span>
         </div>
         <div class="stat">
@@ -222,11 +222,11 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
       </article>
     </div>
 
-    <div class="addon">
+    <div class="addon" id="ai-act">
       <div class="dot" aria-hidden="true"></div>
       <div>
         <h3>AI Act-projektet</h3>
-        <p>Skal alle jeres AI-systemer klassificeres og dokumenteres for alvor, særligt hvis noget af det nærmer sig højrisiko som fx AI i rekruttering, er det et separat forløb. Omfanget varierer for meget fra virksomhed til virksomhed til én fast pris.</p>
+        <p>Skal alle jeres AI-systemer klassificeres og dokumenteres for alvor, særligt hvis I bruger AI til formål der kan være klassificeret som højrisiko — fx screening eller evaluering af jobkandidater — er det et separat forløb. Omfanget varierer for meget fra virksomhed til virksomhed til én fast pris.</p>
         <p class="tag">Solgt separat · pris efter omfang</p>
       </div>
     </div>
@@ -235,7 +235,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
       <div class="dot" aria-hidden="true"></div>
       <div>
         <h3>Konsulentbistand</h3>
-        <p>Nogle gange er det ikke en fast aftale eller et helt projekt, der mangler, bare et hurtigt, kvalificeret svar: en second opinion på et konkret AI-værktøj, et oplæg for ledelsen, eller akut sparring når noget presser. Ingen binding, ingen opstart.</p>
+        <p>Konsulentbistand dækker de situationer, hvor I ikke har brug for en fast aftale, bare et hurtigt og kvalificeret svar — måske en second opinion på et AI-værktøj, måske et oplæg for ledelsen, måske akut sparring når noget presser. Ingen binding, ingen opstart.</p>
         <p class="tag">Fleksibelt · ingen forpligtelse</p>
       </div>
     </div>
@@ -244,7 +244,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
   <section class="block wrap why">
     <h2>Hvorfor nu?</h2>
     <ul>
-      <li><b>AI-forordningens artikel 4 gælder allerede.</b> Kravet om AI-kompetencer hos medarbejdere trådte i kraft i 2025. De færreste har opdaget det, endnu færre kan dokumentere det.</li>
+      <li><b>AI-forordningens artikel 4 gælder allerede.</b> Kravet om at understøtte medarbejderes AI-kompetencer trådte i kraft i 2025, og blev præciseret i juli 2026. De færreste har opdaget det, endnu færre kan dokumentere de tiltag, de rent faktisk har gjort.</li>
       <li><b>Skygge-AI vokser i det stille.</b> Gratis AI-værktøjer med jeres kundedata i prompten er den nye USB-nøgle på parkeringspladsen, bare usynlig for alle undtagen dem der finder den.</li>
       <li><b>AI-assistenter ruller ud, om sikkerheden er klar eller ej.</b> Licenserne er ofte købt, før nogen har spurgt, hvad assistenten egentlig får adgang til.</li>
       <li><b>Forbud virker ikke.</b> Blokerer I AI, flytter brugen bare over på privat telefon. Rammer slår regler, hver gang.</li>
@@ -253,19 +253,19 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
 
   <section class="block wrap" id="kurser">
     <h2>Kurser og oplæg</h2>
-    <p class="sub">Artikel 4 kræver, at medarbejdere har de nødvendige AI-kompetencer. De færreste virksomheder kan i dag dokumentere, at kravet er opfyldt.</p>
+    <p class="sub">Artikel 4 kræver, at I tager skridt til at understøtte medarbejdernes AI-kompetencer — ikke at I garanterer et bestemt niveau. De færreste virksomheder kan i dag dokumentere de tiltag, de rent faktisk har gjort.</p>
 
     <div class="phases">
       <article class="step">
         <p class="num">Til organisationen</p>
         <h3>Medarbejderkursus</h3>
-        <p>Skygge-AI, risikabel databehandling, og hvordan man bruger AI-værktøjer ansvarligt i det daglige. Afsluttes med dokumentation af deltagelse, så I kan vise, at artikel 4-kravet er opfyldt.</p>
+        <p>Skygge-AI, risikabel databehandling, og hvordan man bruger AI-værktøjer ansvarligt i det daglige. Afsluttes med dokumentation af deltagelse, som kan indgå i jeres dokumentation af de tiltag, I har iværksat for at understøtte AI-kompetencer.</p>
       </article>
 
       <article class="step">
         <p class="num">Til direktion og bestyrelse</p>
         <h3>Ledelsesoplæg</h3>
-        <p>43,8% af topledelsen bruger selv AI i ukontrollerede miljøer. Oplægget vender spejlet om: det er ikke kun et medarbejderproblem, det er et ledelsesansvar.</p>
+        <p>43,8% af topledelsen bruger selv AI i ukontrollerede miljøer. Oplægget vender spejlet om mod dem selv.</p>
       </article>
     </div>
   </section>
@@ -314,7 +314,10 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
     toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
   });
   menu.querySelectorAll('a').forEach(function(a){
-    a.addEventListener('click', function(){ menu.classList.remove('open'); });
+    a.addEventListener('click', function(){
+      menu.classList.remove('open');
+      toggle.setAttribute('aria-expanded', 'false');
+    });
   });
 })();
 </script>

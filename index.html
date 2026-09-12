@@ -4,322 +4,37 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Mentat · Klar tænkning. Sikre rammer.</title>
-<meta name="description" content="Fast månedlig rådgivning der giver jer overblik over AI-brug og holder jer på ret kurs med AI-forordningen.">
+<meta name="description" content="Mentat giver danske SMV'er overblik over faktisk AI-brug og holder governance og AI-forordningen ved lige gennem en fast rådgivningsaftale.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500;600&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
 <style>
-:root{
-  --sand:#EFE7D6;
-  --paper:#F7F1E3;
-  --ink:#241F1A;
-  --muted:#6B5F4F;
-  --spice:#B4441F;
-  --sapho:#7A2E2A;
-  --line:#D8CBB2;
-}
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
-body{
-  font-family:'EB Garamond',serif;
-  background:var(--sand);
-  color:var(--ink);
-  font-size:19px;
-  line-height:1.6;
-  -webkit-font-smoothing:antialiased;
-}
-h1,h2,h3,.mono{font-family:'Geist Mono',monospace;font-weight:500;line-height:1.25;letter-spacing:-0.3px}
-.wrap{max-width:960px;margin:0 auto;padding:0 24px}
-a{color:var(--sapho)}
-a:focus-visible,button:focus-visible{outline:3px solid var(--spice);outline-offset:3px}
-
-.topbar{display:flex;align-items:center;justify-content:space-between;padding:22px 24px}
-.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--ink)}
-.brand span{font-family:'Geist Mono',monospace;font-size:clamp(26px,5vw,55px);font-weight:600;letter-spacing:1px}
-.brand span b{color:var(--spice);font-weight:600}
-.topbar a.cta-link{text-decoration:none;font-family:'Geist Mono',monospace;font-size:14px;color:var(--ink);border-bottom:2px solid var(--spice);padding-bottom:2px}
-
-.hero{padding:64px 24px 0}
-.eyebrow{font-family:'Geist Mono',monospace;font-size:13px;letter-spacing:2px;color:var(--spice);font-weight:500;margin-bottom:22px}
-.hero h1{font-size:clamp(26px,4.6vw,42px);max-width:20ch}
-.hero p.lede{margin-top:26px;font-size:21px;max-width:52ch;color:var(--muted)}
-.hero .actions{margin-top:36px;display:flex;gap:16px;flex-wrap:wrap;align-items:center}
-.btn{display:inline-block;background:var(--ink);color:var(--sand);text-decoration:none;padding:14px 26px;border-radius:4px;font-family:'Geist Mono',monospace;font-size:15px}
-.btn:hover{background:var(--sapho)}
-.btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--ink)}
-.btn.ghost:hover{border-color:var(--sapho);color:var(--sapho);background:transparent}
-
-.ridge{margin:56px 0 0;display:block;width:100%}
-
-.statement{background:var(--sapho);color:var(--sand)}
-.statement .wrap{padding:64px 24px;max-width:780px}
-.statement p{font-size:clamp(23px,3.6vw,30px);line-height:1.45;font-weight:400}
-.statement p b{color:#F0C9A8;font-weight:500}
-.statement .src{font-family:'Geist Mono',monospace;font-size:13px;letter-spacing:2px;margin-top:24px;opacity:.75}
-
-.stats{padding:56px 24px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--paper)}
-.stats .kicker{font-family:'Geist Mono',monospace;font-size:12px;letter-spacing:2px;color:var(--spice);text-transform:uppercase;margin-bottom:32px}
-.stats .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:28px}
-.stats .stat{display:flex;flex-direction:column}
-.stats .num{font-family:'Geist Mono',monospace;font-size:clamp(28px,4vw,38px);font-weight:600;color:var(--ink);line-height:1}
-.stats .label{margin-top:12px;font-size:15.5px;color:var(--muted);line-height:1.4}
-.stats .src{margin-top:10px;font-family:'Geist Mono',monospace;font-size:11px;color:var(--spice)}
-@media (max-width:760px){.stats .grid{grid-template-columns:1fr 1fr;row-gap:32px}}
-@media (max-width:480px){.stats .grid{grid-template-columns:1fr}}
-
-section.block{padding:72px 24px}
-.block h2{font-size:clamp(22px,3.6vw,32px);max-width:26ch}
-.block .sub{margin-top:16px;color:var(--muted);max-width:56ch;font-size:20px}
-
-.phases{margin-top:44px;display:grid;gap:20px;grid-template-columns:repeat(2,1fr)}
-.step{background:var(--paper);border:1px solid var(--line);border-radius:8px;padding:28px 24px;display:flex;flex-direction:column}
-.step .num{font-family:'Geist Mono',monospace;font-size:13px;color:var(--spice);letter-spacing:1px}
-.step h3{font-size:19px;margin-top:12px}
-.step p{margin-top:12px;font-size:17px;color:var(--muted);flex-grow:1}
-.step .meta{margin-top:20px;padding-top:16px;border-top:1px solid var(--line);font-family:'Geist Mono',monospace;font-size:12.5px;display:flex;justify-content:space-between;gap:8px}
-
-.addon{margin-top:24px;background:var(--ink);color:var(--sand);border-radius:8px;padding:36px 32px;display:flex;gap:28px;align-items:flex-start;flex-wrap:wrap}
-.addon .dot{width:14px;height:14px;border-radius:50%;background:var(--spice);margin-top:8px;flex-shrink:0}
-.addon h3{font-size:20px}
-.addon p{margin-top:12px;font-size:17.5px;color:#CFC4AE;max-width:60ch}
-.addon .tag{margin-top:16px;font-family:'Geist Mono',monospace;font-size:12.5px;color:#F0C9A8}
-
-.why ul{margin-top:28px;list-style:none;max-width:58ch}
-.why li{padding:14px 0 14px 30px;position:relative;border-bottom:1px solid var(--line);font-size:18.5px}
-.why li::before{content:"";position:absolute;left:4px;top:24px;width:9px;height:9px;border-radius:50%;background:var(--spice)}
-.why li b{font-weight:500}
-
-.about{background:var(--paper);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.about .inner{padding-top:104px;padding-bottom:104px}
-.about .inner{display:grid;grid-template-columns:1fr 1.6fr;gap:44px;align-items:start}
-.about .portrait{aspect-ratio:4/5;background:var(--sand);border:1px solid var(--line);border-radius:8px;overflow:hidden}
-.about .portrait img{width:100%;height:100%;object-fit:cover;display:block}
-.about p{margin-top:16px;color:var(--muted)}
-.about p:first-of-type{margin-top:18px;color:var(--ink)}
-
-.contact{padding:80px 24px 30px}
-.contact h2{font-size:clamp(22px,3.6vw,32px)}
-.contact p{margin-top:16px;color:var(--muted);max-width:50ch}
-.contact .mail{display:inline-block;margin-top:26px;font-family:'Geist Mono',monospace;font-size:clamp(17px,3vw,23px);color:var(--ink);text-decoration:none;border-bottom:3px solid var(--spice);padding-bottom:3px}
-.contact .mail:hover{color:var(--sapho)}
-footer{padding:40px 0 48px;border-top:1px solid var(--line);margin-top:70px}
-footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-family:'Geist Mono',monospace;font-size:12px;color:var(--muted)}
-
-@media (max-width:760px){
-  .phases{grid-template-columns:1fr}
-  .about .inner{grid-template-columns:1fr}
-  .about .portrait{max-width:280px}
-}
-
-.stickynav{position:fixed;top:0;left:0;right:0;background:var(--paper);border-bottom:1px solid var(--line);z-index:100;transform:translateY(-100%);transition:transform .25s ease;box-shadow:0 2px 12px rgba(36,31,26,0.08);visibility:hidden;pointer-events:none}
-.stickynav.visible{transform:translateY(0);visibility:visible;pointer-events:auto}
-.stickynav .inner{max-width:960px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
-.stickynav .brand{display:flex;align-items:center;gap:8px;text-decoration:none;color:var(--ink);flex-shrink:0}
-.stickynav .brand span{font-family:'Geist Mono',monospace;font-size:20px;font-weight:600}
-.stickynav .brand span b{color:var(--spice);font-weight:600}
-.stickynav nav{display:flex;align-items:center;gap:24px}
-.stickynav nav a{font-family:'Geist Mono',monospace;font-size:13.5px;color:var(--ink);text-decoration:none;white-space:nowrap}
-.stickynav nav a:hover{color:var(--spice)}
-.stickynav nav a.cta-link{border-bottom:2px solid var(--spice);padding-bottom:2px}
-.stickynav-toggle{display:none;background:none;border:1px solid var(--line);border-radius:4px;padding:8px 14px;font-family:'Geist Mono',monospace;font-size:13px;color:var(--ink);cursor:pointer}
-@media (max-width:640px){
-  .stickynav-toggle{display:block}
-  .stickynav nav{display:none;flex-basis:100%;flex-direction:column;align-items:flex-start;gap:16px;padding-top:14px;border-top:1px solid var(--line);margin-top:4px}
-  .stickynav nav.open{display:flex}
-}
-</style>
-</head>
-<body>
-
-<header class="wrap topbar">
-  <a class="brand" href="#top" aria-label="Mentat, til toppen">
-    <span>mentat<b>.</b></span>
-  </a>
-  <a class="cta-link" href="#kontakt">Kontakt</a>
-</header>
-
-<div class="stickynav" id="stickynav">
-  <div class="inner">
-    <a class="brand" href="#top"><span>mentat<b>.</b></span></a>
-    <button class="stickynav-toggle" id="stickynav-toggle" aria-label="Åbn menu" aria-expanded="false" aria-controls="stickynav-menu">Menu</button>
-    <nav id="stickynav-menu">
-      <a href="#top">Forside</a>
-      <a href="#husraadgiveren">Husrådgiveren</a>
-      <a href="#kurser">Kurser</a>
-      <a class="cta-link" href="#kontakt">Kontakt</a>
-    </nav>
-  </div>
-</div>
-
+:root{--sand:#EFE7D6;--paper:#F7F1E3;--ink:#241F1A;--muted:#6B5F4F;--spice:#B4441F;--sapho:#7A2E2A;--line:#D8CBB2}
+*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{font-family:'EB Garamond',serif;background:var(--sand);color:var(--ink);font-size:19px;line-height:1.6;-webkit-font-smoothing:antialiased}h1,h2,h3,.mono{font-family:'Geist Mono',monospace;font-weight:500;line-height:1.25;letter-spacing:-.3px}.wrap{max-width:960px;margin:0 auto;padding:0 24px}a{color:var(--sapho)}a:focus-visible,button:focus-visible{outline:3px solid var(--spice);outline-offset:3px}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:22px 24px}.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--ink)}.brand span{font-family:'Geist Mono',monospace;font-size:clamp(26px,5vw,55px);font-weight:600;letter-spacing:1px}.brand span b{color:var(--spice);font-weight:600}.topbar a.cta-link{text-decoration:none;font-family:'Geist Mono',monospace;font-size:14px;color:var(--ink);border-bottom:2px solid var(--spice);padding-bottom:2px}
+.hero{padding:64px 24px 0}.eyebrow{font-family:'Geist Mono',monospace;font-size:13px;letter-spacing:2px;color:var(--spice);font-weight:500;margin-bottom:22px}.hero h1{font-size:clamp(26px,4.6vw,42px);max-width:20ch}.hero p.lede{margin-top:26px;font-size:21px;max-width:55ch;color:var(--muted)}.hero .actions{margin-top:36px;display:flex;gap:16px;flex-wrap:wrap;align-items:center}.btn{display:inline-block;background:var(--ink);color:var(--sand);text-decoration:none;padding:14px 26px;border-radius:4px;font-family:'Geist Mono',monospace;font-size:15px}.btn:hover{background:var(--sapho)}.btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--ink)}.btn.ghost:hover{border-color:var(--sapho);color:var(--sapho);background:transparent}.ridge{margin:56px 0 0;display:block;width:100%}
+.statement{background:var(--sapho);color:var(--sand)}.statement .wrap{padding:64px 24px;max-width:780px}.statement p{font-size:clamp(23px,3.6vw,30px);line-height:1.45}.statement p b{color:#F0C9A8;font-weight:500}.statement .src{font-family:'Geist Mono',monospace;font-size:13px;letter-spacing:2px;margin-top:24px;opacity:.75}
+.stats{padding:56px 24px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--paper)}.stats .kicker{font-family:'Geist Mono',monospace;font-size:12px;letter-spacing:2px;color:var(--spice);text-transform:uppercase;margin-bottom:32px}.stats .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:28px}.stats .stat{display:flex;flex-direction:column}.stats .num{font-family:'Geist Mono',monospace;font-size:clamp(28px,4vw,38px);font-weight:600;line-height:1}.stats .label{margin-top:12px;font-size:15.5px;color:var(--muted);line-height:1.4}.stats .src{margin-top:10px;font-family:'Geist Mono',monospace;font-size:11px;color:var(--spice)}@media(max-width:760px){.stats .grid{grid-template-columns:1fr 1fr;row-gap:32px}}@media(max-width:480px){.stats .grid{grid-template-columns:1fr}}
+section.block{padding:72px 24px}.block h2{font-size:clamp(22px,3.6vw,32px);max-width:26ch}.block .sub{margin-top:16px;color:var(--muted);max-width:56ch;font-size:20px}.phases{margin-top:44px;display:grid;gap:20px;grid-template-columns:repeat(2,1fr)}.step{background:var(--paper);border:1px solid var(--line);border-radius:8px;padding:28px 24px;display:flex;flex-direction:column}.step .num{font-family:'Geist Mono',monospace;font-size:13px;color:var(--spice);letter-spacing:1px}.step h3{font-size:19px;margin-top:12px}.step p{margin-top:12px;font-size:17px;color:var(--muted);flex-grow:1}.step .meta{margin-top:20px;padding-top:16px;border-top:1px solid var(--line);font-family:'Geist Mono',monospace;font-size:12.5px;display:flex;justify-content:space-between;gap:8px}
+.addon{margin-top:24px;background:var(--ink);color:var(--sand);border-radius:8px;padding:36px 32px;display:flex;gap:28px;align-items:flex-start;flex-wrap:wrap}.addon .dot{width:14px;height:14px;border-radius:50%;background:var(--spice);margin-top:8px;flex-shrink:0}.addon h3{font-size:20px}.addon p{margin-top:12px;font-size:17.5px;color:#CFC4AE;max-width:60ch}.addon .tag{margin-top:16px;font-family:'Geist Mono',monospace;font-size:12.5px;color:#F0C9A8}.why ul{margin-top:28px;list-style:none;max-width:58ch}.why li{padding:14px 0 14px 30px;position:relative;border-bottom:1px solid var(--line);font-size:18.5px}.why li::before{content:"";position:absolute;left:4px;top:24px;width:9px;height:9px;border-radius:50%;background:var(--spice)}.why li b{font-weight:500}
+.about{background:var(--paper);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}.about .inner{padding-top:104px;padding-bottom:104px;display:grid;grid-template-columns:1fr 1.6fr;gap:44px;align-items:start}.about .portrait{aspect-ratio:4/5;background:var(--sand);border:1px solid var(--line);border-radius:8px;overflow:hidden}.about .portrait img{width:100%;height:100%;object-fit:cover;display:block}.about p{margin-top:16px;color:var(--muted)}.about p:first-of-type{margin-top:18px;color:var(--ink)}.contact{padding:80px 24px 30px}.contact h2{font-size:clamp(22px,3.6vw,32px)}.contact p{margin-top:16px;color:var(--muted);max-width:50ch}.contact .mail{display:inline-block;margin-top:26px;font-family:'Geist Mono',monospace;font-size:clamp(17px,3vw,23px);color:var(--ink);text-decoration:none;border-bottom:3px solid var(--spice);padding-bottom:3px}.contact .mail:hover{color:var(--sapho)}footer{padding:40px 0 48px;border-top:1px solid var(--line);margin-top:70px}footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-family:'Geist Mono',monospace;font-size:12px;color:var(--muted)}@media(max-width:760px){.phases{grid-template-columns:1fr}.about .inner{grid-template-columns:1fr}.about .portrait{max-width:280px}}
+.stickynav{position:fixed;top:0;left:0;right:0;background:var(--paper);border-bottom:1px solid var(--line);z-index:100;transform:translateY(-100%);transition:transform .25s ease;box-shadow:0 2px 12px rgba(36,31,26,.08);visibility:hidden;pointer-events:none}.stickynav.visible{transform:translateY(0);visibility:visible;pointer-events:auto}.stickynav .inner{max-width:960px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}.stickynav .brand span{font-size:20px}.stickynav nav{display:flex;align-items:center;gap:24px}.stickynav nav a{font-family:'Geist Mono',monospace;font-size:13.5px;color:var(--ink);text-decoration:none;white-space:nowrap}.stickynav nav a:hover{color:var(--spice)}.stickynav nav a.cta-link{border-bottom:2px solid var(--spice);padding-bottom:2px}.stickynav-toggle{display:none;background:none;border:1px solid var(--line);border-radius:4px;padding:8px 14px;font-family:'Geist Mono',monospace;font-size:13px;color:var(--ink);cursor:pointer}@media(max-width:640px){.stickynav-toggle{display:block}.stickynav nav{display:none;flex-basis:100%;flex-direction:column;align-items:flex-start;gap:16px;padding-top:14px;border-top:1px solid var(--line);margin-top:4px}.stickynav nav.open{display:flex}}
+</style></head><body>
+<header class="wrap topbar"><a class="brand" href="#top" aria-label="Mentat, til toppen"><span>mentat<b>.</b></span></a><a class="cta-link" href="#kontakt">Kontakt</a></header>
+<div class="stickynav" id="stickynav"><div class="inner"><a class="brand" href="#top"><span>mentat<b>.</b></span></a><button class="stickynav-toggle" id="stickynav-toggle" aria-label="Åbn menu" aria-expanded="false" aria-controls="stickynav-menu">Menu</button><nav id="stickynav-menu"><a href="#top">Forside</a><a href="#husraadgiveren">Husrådgiveren</a><a href="#kurser">Kurser</a><a class="cta-link" href="#kontakt">Kontakt</a></nav></div></div>
 <main id="top">
-  <section class="hero wrap">
-    <p class="eyebrow">rådgivning i ai-alderen</p>
-    <h1>AI er allerede inde i huset. Har I tænkt over det?</h1>
-    <p class="lede">De fleste virksomheder ved ikke, hvilke AI-værktøjer medarbejderne bruger, eller hvilke data der ryger ind i dem. Mentat bygger overblikket og holder jer opdateret på AI-forordningen, gennem én fast månedlig aftale.</p>
-    <div class="actions">
-      <a class="btn" href="#kontakt">Book en snak</a>
-      <a class="btn ghost" href="#husraadgiveren">Se hvordan det fungerer</a>
-    </div>
-  </section>
-
-  <svg class="ridge" viewBox="0 0 960 90" preserveAspectRatio="none" aria-hidden="true">
-    <path d="M0 82 C180 20 300 20 420 66 C440 74 460 74 480 66 C600 20 740 20 960 82" fill="none" stroke="#D8CBB2" stroke-width="2"/>
-  </svg>
-
-  <section class="statement">
-    <div class="wrap">
-      <p>AI kommer ind i virksomheden, uanset om nogen har inviteret det. <b>Spørgsmålet er, hvem der holder øje med det, mens det sker.</b></p>
-      <p class="src">overblik først · kontrol bagefter</p>
-    </div>
-  </section>
-
-  <section class="stats">
-    <div class="wrap">
-      <p class="kicker">AI governance · status lige nu</p>
-      <div class="grid">
-        <div class="stat">
-          <span class="num">73%</span>
-          <span class="label">af de adspurgte integrerer allerede AI</span>
-          <span class="src">ESET SMB Cyber Readiness Index 2026</span>
-        </div>
-        <div class="stat">
-          <span class="num">40%</span>
-          <span class="label">mangler en politik for AI-brug</span>
-          <span class="src">ESET SMB Cyber Readiness Index 2026</span>
-        </div>
-        <div class="stat">
-          <span class="num">43,8%</span>
-          <span class="label">af topledelsen bruger selv AI i åbne, ukontrollerede miljøer</span>
-          <span class="src">CBS, marts 2026</span>
-        </div>
-        <div class="stat">
-          <span class="num">3×</span>
-          <span class="label">så tilbøjelige er medarbejdere til at bruge AI, end deres ledere tror</span>
-          <span class="src">McKinsey Superagency, jan. 2025</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="block wrap" id="husraadgiveren">
-    <h2>Husrådgiveren: én aftale, to faser</h2>
-    <p class="sub">En opstart der lægger fundamentet, og en løbende ordning der holder overblikket ved lige, måned for måned.</p>
-
-    <div class="phases">
-      <article class="step">
-        <p class="num">Fase 1</p>
-        <h3><a href="opstartsmaaneden.html" style="color:inherit;text-decoration:none;border-bottom:1px solid var(--line)">Opstartsmåneden</a></h3>
-        <p>Vi kortlægger jeres faktiske AI-brug og sætter det rette overvågningsværktøj i drift, suppleret med korte samtaler med nøglemedarbejdere. I får et AI-register og en status på, hvor I står i forhold til AI-forordningen.</p>
-        <div class="meta"><span>Engangsforløb</span><b>Fast pris</b></div>
-      </article>
-
-      <article class="step">
-        <p class="num">Fase 2</p>
-        <h3><a href="loebende-aftale.html" style="color:inherit;text-decoration:none;border-bottom:1px solid var(--line)">Den løbende aftale</a></h3>
-        <p>Et overvågningsværktøj holder øje med jeres AI-brug mellem møderne. Et fast møde hver måned samler op på det, der er sket, og det der skal besluttes. Tre niveauer, efter hvor tæt overvågningen skal være.</p>
-        <div class="meta"><span>Tre niveauer</span><b>Fra fast pris</b></div>
-      </article>
-    </div>
-
-    <div class="addon" id="ai-act">
-      <div class="dot" aria-hidden="true"></div>
-      <div>
-        <h3>AI Act-projektet</h3>
-        <p>Skal alle jeres AI-systemer klassificeres og dokumenteres for alvor, særligt hvis I bruger AI til formål der kan være klassificeret som højrisiko — fx screening eller evaluering af jobkandidater — er det et separat forløb. Omfanget varierer for meget fra virksomhed til virksomhed til én fast pris.</p>
-        <p class="tag">Solgt separat · pris efter omfang</p>
-      </div>
-    </div>
-
-    <div class="addon">
-      <div class="dot" aria-hidden="true"></div>
-      <div>
-        <h3>Konsulentbistand</h3>
-        <p>Konsulentbistand dækker de situationer, hvor I ikke har brug for en fast aftale, bare et hurtigt og kvalificeret svar — måske en second opinion på et AI-værktøj, måske et oplæg for ledelsen, måske akut sparring når noget presser. Ingen binding, ingen opstart.</p>
-        <p class="tag">Fleksibelt · ingen forpligtelse</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="block wrap why">
-    <h2>Hvorfor nu?</h2>
-    <ul>
-      <li><b>AI-forordningens artikel 4 gælder allerede.</b> Kravet om at understøtte medarbejderes AI-kompetencer trådte i kraft i 2025, og blev præciseret i juli 2026. De færreste har opdaget det, endnu færre kan dokumentere de tiltag, de rent faktisk har gjort.</li>
-      <li><b>Skygge-AI vokser i det stille.</b> Gratis AI-værktøjer med jeres kundedata i prompten er den nye USB-nøgle på parkeringspladsen, bare usynlig for alle undtagen dem der finder den.</li>
-      <li><b>AI-assistenter ruller ud, om sikkerheden er klar eller ej.</b> Licenserne er ofte købt, før nogen har spurgt, hvad assistenten egentlig får adgang til.</li>
-      <li><b>Forbud virker ikke.</b> Blokerer I AI, flytter brugen bare over på privat telefon. Rammer slår regler, hver gang.</li>
-    </ul>
-  </section>
-
-  <section class="block wrap" id="kurser">
-    <h2>Kurser og oplæg</h2>
-    <p class="sub">Artikel 4 kræver, at I tager skridt til at understøtte medarbejdernes AI-kompetencer — ikke at I garanterer et bestemt niveau. De færreste virksomheder kan i dag dokumentere de tiltag, de rent faktisk har gjort.</p>
-
-    <div class="phases">
-      <article class="step">
-        <p class="num">Til organisationen</p>
-        <h3>Medarbejderkursus</h3>
-        <p>Skygge-AI, risikabel databehandling, og hvordan man bruger AI-værktøjer ansvarligt i det daglige. Afsluttes med dokumentation af deltagelse, som kan indgå i jeres dokumentation af de tiltag, I har iværksat for at understøtte AI-kompetencer.</p>
-      </article>
-
-      <article class="step">
-        <p class="num">Til direktion og bestyrelse</p>
-        <h3>Ledelsesoplæg</h3>
-        <p>43,8% af topledelsen bruger selv AI i ukontrollerede miljøer. Oplægget vender spejlet om mod dem selv.</p>
-      </article>
-    </div>
-  </section>
-
-  <section class="about">
-    <div class="wrap block inner">
-      <div class="portrait"><img src="martin-klein.jpg" alt="Martin Klein, rådgiver hos Mentat" loading="lazy"></div>
-      <div>
-        <h2>Mennesket bag</h2>
-        <p>Jeg hedder Martin Klein. Jeg har arbejdet med cybersikkerhed i 14 år, senest som teamleder for et rådgiverteam på ti mennesker, og jeg har stået på scenen til V2 Security og forklaret sikkerhed, så ikke-teknikere gad høre efter.</p>
-        <p>Min kernefaglighed er at oversætte: fra trusselsbillede til beslutning, fra teknisk kontrol til noget, en direktion kan handle på. Jeg siger tingene, som de er, også når det ikke er det, I helst vil høre. Det er billigere i længden.</p>
-        <p>Og ja, navnet er fra Dune. En mentat er et menneske, der er trænet til at tænke klart om komplekse systemer og rådgive dem, der skal træffe beslutningerne. Det var det bedste jobopslag, jeg nogensinde har læst.</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="contact wrap" id="kontakt">
-    <h2>Lad os starte med en snak</h2>
-    <p>En halv times ærlig samtale om, hvor I står. Måske ender det med en aftale, måske ender det med et godt råd og et håndtryk. Begge dele er fint.</p>
-    <a class="mail" href="mailto:martin@mentat.dk">martin@mentat.dk</a>
-  </section>
-</main>
-
-<footer>
-  <div class="wrap">
-    <span>Mentat · Klar tænkning. Sikre rammer.</span>
-    <span>CVR: på vej · Sjælland, Danmark</span>
-  </div>
-</footer>
-
-<script>
-(function(){
-  var nav = document.getElementById('stickynav');
-  var threshold = 220;
-  function onScroll(){
-    if(window.scrollY > threshold){ nav.classList.add('visible'); }
-    else { nav.classList.remove('visible'); }
-  }
-  window.addEventListener('scroll', onScroll, {passive:true});
-  onScroll();
-
-  var toggle = document.getElementById('stickynav-toggle');
-  var menu = document.getElementById('stickynav-menu');
-  toggle.addEventListener('click', function(){
-    var open = menu.classList.toggle('open');
-    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
-  });
-  menu.querySelectorAll('a').forEach(function(a){
-    a.addEventListener('click', function(){
-      menu.classList.remove('open');
-      toggle.setAttribute('aria-expanded', 'false');
-    });
-  });
-})();
-</script>
-</body>
-</html>
+<section class="hero wrap"><p class="eyebrow">rådgivning i ai-alderen</p><h1>AI er allerede inde i huset. Har I tænkt over det?</h1><p class="lede">De fleste virksomheder ved ikke, hvilke AI-værktøjer medarbejderne bruger, eller hvilke data der ryger ind i dem. Mentat finder det, der ellers er svært at se, og holder overblikket ved lige — også når AI-brugen og reglerne ændrer sig.</p><div class="actions"><a class="btn" href="#kontakt">Book en snak</a><a class="btn ghost" href="#husraadgiveren">Se hvordan det fungerer</a></div></section>
+<svg class="ridge" viewBox="0 0 960 90" preserveAspectRatio="none" aria-hidden="true"><path d="M0 82 C180 20 300 20 420 66 C440 74 460 74 480 66 C600 20 740 20 960 82" fill="none" stroke="#D8CBB2" stroke-width="2"/></svg>
+<section class="statement"><div class="wrap"><p>AI kommer ind i virksomheden, uanset om nogen har inviteret det. <b>Spørgsmålet er, hvem der holder øje med det, mens det sker.</b></p><p class="src">overblik først · kontrol bagefter</p></div></section>
+<section class="stats"><div class="wrap"><p class="kicker">AI governance · status lige nu</p><div class="grid"><div class="stat"><span class="num">73%</span><span class="label">af de adspurgte integrerer allerede AI</span><span class="src">ESET SMB Cyber Readiness Index 2026</span></div><div class="stat"><span class="num">40%</span><span class="label">mangler en politik for AI-brug</span><span class="src">ESET SMB Cyber Readiness Index 2026</span></div><div class="stat"><span class="num">43,8%</span><span class="label">af topledelsen bruger selv AI i åbne, ukontrollerede miljøer</span><span class="src">CBS, marts 2026</span></div><div class="stat"><span class="num">3×</span><span class="label">så tilbøjelige er medarbejdere til at bruge AI, end deres ledere tror</span><span class="src">McKinsey Superagency, jan. 2025</span></div></div></div></section>
+<section class="block wrap" id="husraadgiveren"><h2>Husrådgiveren: én aftale, to faser</h2><p class="sub">En opstart der lægger fundamentet, og en løbende ordning der holder overblikket ved lige, måned for måned.</p><div class="phases"><article class="step"><p class="num">Fase 1</p><h3><a href="opstartsmaaneden.html" style="color:inherit;text-decoration:none;border-bottom:1px solid var(--line)">Opstartsmåneden</a></h3><p>Vi kortlægger jeres faktiske AI-brug og sætter det rette overvågningsværktøj i drift, suppleret med korte samtaler med nøglemedarbejdere. I får et AI-register og en status på, hvor I står i forhold til AI-forordningen.</p><div class="meta"><span>Engangsforløb</span><b>49.500 kr.</b></div></article><article class="step"><p class="num">Fase 2</p><h3><a href="loebende-aftale.html" style="color:inherit;text-decoration:none;border-bottom:1px solid var(--line)">Den løbende aftale</a></h3><p>Overvågningen fortsætter mellem møderne. Et fast møde hver måned samler op på ændringer, risici og de beslutninger, der kræver handling.</p><div class="meta"><span>Core</span><b>7.500 kr./md.</b></div></article></div>
+<div class="addon" id="ai-act"><div class="dot" aria-hidden="true"></div><div><h3>AI Act-projektet</h3><p>Skal AI-systemer klassificeres og dokumenteres mere omfattende, særligt hvis I bruger AI til formål der kan være klassificeret som højrisiko — fx screening eller evaluering af jobkandidater — er det et separat forløb. Omfanget varierer for meget fra virksomhed til virksomhed til én fast pris.</p><p class="tag">Solgt separat · pris efter omfang</p></div></div>
+<div class="addon"><div class="dot" aria-hidden="true"></div><div><h3>Konsulentbistand</h3><p>Konsulentbistand dækker de situationer, hvor I ikke har brug for en fast aftale, bare et hurtigt og kvalificeret svar — måske en second opinion på et AI-værktøj, et oplæg for ledelsen eller akut sparring. Ingen binding, ingen opstart.</p><p class="tag">Fleksibelt · ingen forpligtelse</p></div></div></section>
+<section class="block wrap why"><h2>Hvorfor nu?</h2><ul><li><b>AI-forordningens artikel 4 gælder allerede.</b> Kravet om at understøtte medarbejderes AI-kompetencer trådte i kraft i 2025, og blev præciseret i juli 2026. De færreste har opdaget det, endnu færre kan dokumentere de tiltag, de rent faktisk har gjort.</li><li><b>Skygge-AI vokser i det stille.</b> Gratis AI-værktøjer med jeres kundedata i prompten er den nye USB-nøgle på parkeringspladsen, bare usynlig for alle undtagen dem der finder den.</li><li><b>AI-assistenter ruller ud, om sikkerheden er klar eller ej.</b> Licenserne er ofte købt, før nogen har spurgt, hvad assistenten egentlig får adgang til.</li><li><b>Forbud virker ikke.</b> Blokerer I AI, flytter brugen bare over på privat telefon. Rammer slår regler, hver gang.</li></ul></section>
+<section class="block wrap" id="kurser"><h2>Kurser og oplæg</h2><p class="sub">Artikel 4 kræver, at I tager skridt til at understøtte medarbejdernes AI-kompetencer — ikke at I garanterer et bestemt niveau. De færreste virksomheder kan i dag dokumentere de tiltag, de rent faktisk har gjort.</p><div class="phases"><article class="step"><p class="num">Til organisationen</p><h3>Medarbejderkursus</h3><p>Skygge-AI, risikabel databehandling, og hvordan man bruger AI-værktøjer ansvarligt i det daglige. Afsluttes med dokumentation af deltagelse, som kan indgå i jeres dokumentation af de tiltag, I har iværksat for at understøtte AI-kompetencer.</p></article><article class="step"><p class="num">Til direktion og bestyrelse</p><h3>Ledelsesoplæg</h3><p>43,8% af topledelsen bruger selv AI i ukontrollerede miljøer. Oplægget vender spejlet om mod dem selv.</p></article></div></section>
+<section class="about"><div class="wrap block inner"><div class="portrait"><img src="martin-klein.jpg" alt="Martin Klein, rådgiver hos Mentat" loading="lazy"></div><div><h2>Mennesket bag</h2><p>Jeg hedder Martin Klein. Jeg har arbejdet med IT i 14 år, de seneste knap seks med cybersikkerhed. Senest var jeg teamleder for et rådgiverteam på ti mennesker, og jeg har stået på scenen til V2 Security og forklaret sikkerhed, så ikke-teknikere gad høre efter.</p><p>Min kernefaglighed er at oversætte: fra trusselsbillede til beslutning, fra teknisk kontrol til noget, en direktion kan handle på. Jeg siger tingene, som de er, også når det ikke er det, I helst vil høre. Det er billigere i længden.</p><p>Og ja, navnet er fra Dune. En mentat er et menneske, der er trænet til at tænke klart om komplekse systemer og rådgive dem, der skal træffe beslutningerne. Det var det bedste jobopslag, jeg nogensinde har læst.</p></div></div></section>
+<section class="contact wrap" id="kontakt"><h2>Lad os starte med en snak</h2><p>En halv times ærlig samtale om, hvor I står. Måske ender det med en aftale, måske ender det med et godt råd og et håndtryk. Begge dele er fint.</p><a class="mail" href="mailto:martin@mentat.dk">martin@mentat.dk</a></section></main>
+<footer><div class="wrap"><span>Mentat · Klar tænkning. Sikre rammer.</span><span>CVR: på vej · Sjælland, Danmark</span></div></footer>
+<script>(function(){var nav=document.getElementById('stickynav');var threshold=220;function onScroll(){if(window.scrollY>threshold){nav.classList.add('visible')}else{nav.classList.remove('visible')}}window.addEventListener('scroll',onScroll,{passive:true});onScroll();var toggle=document.getElementById('stickynav-toggle');var menu=document.getElementById('stickynav-menu');toggle.addEventListener('click',function(){var open=menu.classList.toggle('open');toggle.setAttribute('aria-expanded',open?'true':'false')});menu.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){menu.classList.remove('open');toggle.setAttribute('aria-expanded','false')})})})();</script>
+</body></html>

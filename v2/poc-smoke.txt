@@ -1,0 +1,1 @@
+Mentat v2: Core -> Dev Worker -> Security + Legal -> Human Approval -> draft PR.
